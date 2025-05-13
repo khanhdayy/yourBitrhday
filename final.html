@@ -7,29 +7,29 @@
     body {
       margin: 0;
       background: pink;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
       flex-direction: column;
-      font-family: 'Arial', sans-serif;
     }
 
     h1 {
       font-size: 40px;
       color: #e91e63;
       text-align: center;
-      z-index: 2;
+      z-index: 10;
     }
 
     .heart {
       width: 20px;
       height: 20px;
-      position: absolute;
+      position: fixed;
       background: red;
       transform: rotate(45deg);
-      animation: float 4s ease-in infinite;
+      animation: floatUp 4s linear forwards;
     }
 
     .heart::before,
@@ -52,13 +52,13 @@
       top: 0;
     }
 
-    @keyframes float {
+    @keyframes floatUp {
       0% {
-        transform: translateY(0) rotate(45deg);
+        transform: translate(0, 0) rotate(45deg);
         opacity: 1;
       }
       100% {
-        transform: translateY(-100vh) rotate(720deg);
+        transform: translate(var(--x), var(--y)) rotate(720deg);
         opacity: 0;
       }
     }
@@ -71,8 +71,20 @@
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+
+      // Tọa độ phát sinh trái tim
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      // Hướng bay (ngẫu nhiên theo mọi phía)
+      const deltaX = (Math.random() - 0.5) * 300; // bay ngang trái phải
+      const deltaY = (Math.random() - 1) * 300;   // bay lên trên
+
+      heart.style.left = x + "px";
+      heart.style.top = y + "px";
+      heart.style.setProperty("--x", `${deltaX}px`);
+      heart.style.setProperty("--y", `${deltaY}px`);
+
       document.body.appendChild(heart);
 
       setTimeout(() => {
@@ -80,7 +92,7 @@
       }, 4000);
     }
 
-    setInterval(createHeart, 200);
+    setInterval(createHeart, 150);
   </script>
 </body>
 </html>
