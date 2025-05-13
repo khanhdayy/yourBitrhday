@@ -116,22 +116,18 @@
       <p>Chúng ta sẽ còn cùng nhau tạo nên thật nhiều kỷ niệm tuyệt vời nữa 💑</p>
     </div>
   </div>
-   <div class="confirmation">
-    <p>Em muốn thay đổi lịch trình gì thì nhắn lại với anh, còn không hãy ấn xác nhận ở phía dưới.</p>
-    <button onclick="confirmAndDownload()">Xác nhận</button>
-  </div>
+   <div style="text-align:center; margin-top:40px;">
+  <p>Em muốn thay đổi lịch trình gì thì nhắn lại với anh 💬<br>
+  Còn không hãy ấn nút xác nhận phía dưới nhé!</p>
+  <button onclick="goToFinalPage()" style="padding: 10px 20px; font-size: 18px; background-color: #e91e63; color: white; border: none; border-radius: 8px; cursor: pointer;">Xác nhận</button>
+</div>
 
-  <script>
-    // Tạo file xác nhận khi nhấn nút "Xác nhận"
-    function confirmAndDownload() {
-      const content = "Xác nhận lịch trình: \n1. 7:30 PM: Anh đón em\n2. 8:00 PM: Dinner 💝\n3. 9:00 PM: Dating & Birthday Party 🎂\n4. 10:30 PM: The End\n5. 23:59: Chúc em sinh nhật vui vẻ và luôn được yêu anh nhiều 🥰\n6. Tương lai: Chúng ta sẽ cùng tạo nhiều kỷ niệm tuyệt vời 💑";
-      const blob = new Blob([content], { type: 'text/plain' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'confirmation.txt';
-      link.click();
-    }
-  </script>
+<script>
+  function goToFinalPage() {
+    window.location.href = "final.html";
+  }
+</script>
+
 </body>
   <script>
   function fadeAndRedirect() {
