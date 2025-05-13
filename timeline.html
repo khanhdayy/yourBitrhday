@@ -5,29 +5,42 @@
   <title>HAPPY BIRTHDAY</title>
   <style>
     body {
-      background: #fff;
+      margin: 0;
+      background: #ffe0f0; /* Màu hồng nhẹ */
       font-family: 'Arial', sans-serif;
-      padding: 40px;
       color: #333;
-    }
-    h1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
       color: #e91e63;
+      font-size: 3rem;
+      margin-bottom: 30px;
     }
+
     .timeline {
-      margin-top: 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      padding-left: 20px;
+      width: 100%;
     }
+
     .event {
       margin-bottom: 30px;
       border-left: 3px solid #e91e63;
       padding-left: 20px;
       position: relative;
+      text-align: left;
     }
+
     .event::before {
       content: "";
       position: absolute;
@@ -38,12 +51,16 @@
       background: #e91e63;
       border-radius: 50%;
     }
+
     .event h3 {
       margin: 0;
       font-size: 1.2em;
+      color: #e91e63;
     }
+
     .event p {
       margin: 5px 0 0;
+      font-size: 1em;
     }
   </style>
 </head>
@@ -51,7 +68,7 @@
   <h1>DATING 💕</h1>
   <div class="timeline">
     <div class="event">
-      <h3> 7:30 PM</h3>
+      <h3>7:30 PM</h3>
       <p>ANH ĐÓN EM.</p>
     </div>
     <div class="event">
@@ -67,7 +84,7 @@
       <p>THE END</p>
     </div>
     <div class="event">
-      <h3>23:59</h3>
+      <h3>23:59 PM</h3>
       <p>Hôm nay là sinh nhật của em – chúc em sinh nhật vui vẻ và luôn được yêu anh nhiều nhiều nhé 🥰</p>
     </div>
     <div class="event">
