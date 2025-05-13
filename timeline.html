@@ -62,6 +62,30 @@
       margin: 5px 0 0;
       font-size: 1em;
     }
+     .confirmation {
+      margin-top: 40px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .confirmation p {
+      color: #e91e63;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #ad1457;
+    }
   </style>
 </head>
 <body>
@@ -92,6 +116,22 @@
       <p>Chúng ta sẽ còn cùng nhau tạo nên thật nhiều kỷ niệm tuyệt vời nữa 💑</p>
     </div>
   </div>
+   <div class="confirmation">
+    <p>Em muốn thay đổi lịch trình gì thì nhắn lại với anh, còn không hãy ấn xác nhận ở phía dưới.</p>
+    <button onclick="confirmAndDownload()">Xác nhận</button>
+  </div>
+
+  <script>
+    // Tạo file xác nhận khi nhấn nút "Xác nhận"
+    function confirmAndDownload() {
+      const content = "Xác nhận lịch trình: \n1. 7:30 PM: Anh đón em\n2. 8:00 PM: Dinner 💝\n3. 9:00 PM: Dating & Birthday Party 🎂\n4. 10:30 PM: The End\n5. 23:59: Chúc em sinh nhật vui vẻ và luôn được yêu anh nhiều 🥰\n6. Tương lai: Chúng ta sẽ cùng tạo nhiều kỷ niệm tuyệt vời 💑";
+      const blob = new Blob([content], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'confirmation.txt';
+      link.click();
+    }
+  </script>
 </body>
   <script>
   function fadeAndRedirect() {
